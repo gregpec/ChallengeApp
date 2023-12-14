@@ -9,7 +9,7 @@ isActive = false;
 string name = "Ewa";
 int age = 17;
 
-if (plec == ("Kobieta") && name == "Ewa " && age == 30)
+if (plec == ("Kobieta") && name == ("Ewa") && age == 30)
 {
     Console.WriteLine("Ewa, lat 30");
 }
