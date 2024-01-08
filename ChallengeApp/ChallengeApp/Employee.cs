@@ -13,13 +13,13 @@
         public string Name { get; private set; } 
         public string Surname { get; private set; }
         public int Age { get; private set; }
-        public int Score { get; private set; }
-
+      
         List<int> scores = new List<int>();
         public void Addscore(int number)
         {
             this.scores.Add(number);
         }
+
         public int Result
         {
             get
@@ -27,13 +27,7 @@
                 return this.scores.Sum();
             }
         }
-       public string EmployeeName
-        {
-            get
-            {
-                return this.Name;
-            }
-        }
+       
     }
 }
 

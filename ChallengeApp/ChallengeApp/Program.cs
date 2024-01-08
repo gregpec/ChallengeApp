@@ -22,7 +22,6 @@ List<Employee> employeers = new List<Employee>()
 { 
     Employee1, Employee2, Employee3
 };
-
 int maxResult = -1;
 Employee employerWithMaxResult = null;
 
