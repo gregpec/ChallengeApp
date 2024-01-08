@@ -1,85 +1,44 @@
-﻿using System;
-using System.ComponentModel.Design;
-using System.Xml.Linq;
-int number = 12345;
-int l0 = 0; 
-int l1 = 0; 
-int l2 = 0;
-int l3 = 0;
-int l4 = 0;
-int l5 = 0;
-int l6 = 0;
-int l7 = 0;
-int l8 = 0;
-int l9 = 0;
+﻿using ChallengeApp;
+using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
 
-string numberInString = number.ToString();
-char[] letters = numberInString.ToArray();
+Employee Employee1 = new Employee("Waldemar","Wituszyński",31);
+Employee Employee2 = new Employee("Zuzanna","Pasiuta",35);
+Employee Employee3 = new Employee("Karol","Patryczewski",34);
 
-    foreach (char c in letters)
+Employee1.Addscore(5);
+Employee1.Addscore(3);
+Employee1.Addscore(1);
+
+Employee2.Addscore(1);
+Employee2.Addscore(6);
+Employee2.Addscore(10);
+
+Employee3.Addscore(1);
+Employee3.Addscore(30);
+Employee3.Addscore(1);
+
+List<Employee> employeers = new List<Employee>()
+{ 
+    Employee1, Employee2, Employee3
+};
+
+int maxResult = -1;
+Employee employerWithMaxResult = null;
+
+foreach(var employe in employeers)
+{
+    if (employe.Result > maxResult)
     {
-    if (c == '0')
-    {
-        l0 = l0 + 1;
-    }
-    else if (c == '1')
-    {
-        l1 = l1 + 1;
-    }
-    else if (c == '2')
-    {
-        l2 = l2 + 1;
-    }
-    else if (c == '3')
-    {
-        l3 = l3 + 1;
-    }
-    else if (c == '4')
-    {
-        l4 = l4 + 1;
-    }
-    else if (c == '5')
-    {
-        l5 = l5 + 1;
-    }
-    else if (c == '6')
-    {
-        l6 = l6 + 1;
-    }
-    else if (c == '7')
-    {
-        l7 = l7 + 1;
-    }
-    else if (c == '8')
-    {
-        l8 = l8 + 1;
-    }
-    else if (c == '9')
-    {
-        l9 = l9 + 1;
+        maxResult = employe.Result;
+        employerWithMaxResult = employe; 
     }
 }
+Console.WriteLine("Employe max result is " + maxResult);
+Console.WriteLine("Employe with max result is " + employerWithMaxResult.Name+ " " + employerWithMaxResult.Surname+" "+ employerWithMaxResult.Age);
 
-Console.Write("Wyniki dla liczby: ");
-Console.WriteLine(number);
-Console.Write(" 0 => ");
-Console.WriteLine(l0);
-Console.Write(" 1 => ");
-Console.WriteLine(l1);
-Console.Write(" 2 => ");
-Console.WriteLine(l2);
-Console.Write(" 3 => ");
-Console.WriteLine(l3);
-Console.Write(" 4 => ");
-Console.WriteLine(l4);
-Console.Write(" 5 => ");
-Console.WriteLine(l5);
-Console.Write(" 6 => ");
-Console.WriteLine(l6);
-Console.Write(" 7 => ");
-Console.WriteLine(l7);
-Console.Write(" 8 => ");
-Console.WriteLine(l8);
-Console.Write(" 9 => ");
-Console.WriteLine(l9);
+
+
+
+
 
