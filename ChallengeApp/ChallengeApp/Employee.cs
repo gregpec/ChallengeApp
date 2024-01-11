@@ -2,24 +2,22 @@
 {
     public class Employee
     {
-        private int score;
         public Employee(string name, string surname, int age)
         {
             this.Name = name;
             this.Surname = surname; 
-            this.Age = age;  
-            this.score = 0;
+            this.Age = age;
         }
+
         public string Name { get; private set; } 
         public string Surname { get; private set; }
         public int Age { get; private set; }
       
-        List<int> scores = new List<int>();
-        public void Addscore(int number)
+        private List<int> scores = new List<int>();
+        public void AddScore(int number)
         {
             this.scores.Add(number);
         }
-
         public int Result
         {
             get
