@@ -1,40 +1,31 @@
 ﻿using ChallengeApp;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection.Metadata;
 
-Employee Employee1 = new Employee("Waldemar","Wituszyński",31);
-Employee Employee2 = new Employee("Zuzanna","Pasiuta",35);
-Employee Employee3 = new Employee("Karol","Patryczewski",34);
+Employee Employee1 = new Employee("Jacek","Kalinowski");
+Employee Employee2 = new Employee("Renata","Walecko");
+Employee Employee3 = new Employee("Karol","Patryczewski");
 
-Employee1.AddScore(5);
-Employee1.AddScore(3);
-Employee1.AddScore(1);
+Employee1.AddGrade(5);
+Employee1.AddGrade(-3);
+Employee1.AddGrade(1);
 
-Employee2.AddScore(1);
-Employee2.AddScore(6);
-Employee2.AddScore(10);
+Employee2.AddGrade(1);
+Employee2.AddGrade(6);
+Employee2.AddGrade(10);
 
-Employee3.AddScore(1);
-Employee3.AddScore(30);
-Employee3.AddScore(1);
+Employee3.AddGrade(1);
+Employee3.AddGrade(30);
+Employee3.AddGrade(1);
 
 List<Employee> employeers = new List<Employee>()
 { 
     Employee1, Employee2, Employee3
 };
-int maxResult = -1;
-Employee employerWithMaxResult = null;
+    var statistics = Employee1.GetStatistics(); 
+    Console.WriteLine("Employee named " + Employee1.Name + " has " +$"Average: {statistics.Average:N2}");
+    Console.WriteLine($" Min: {statistics.Min}");
+    Console.WriteLine($" Max: {statistics.Max}");
 
-foreach(var employee in employeers)
-{
-    if (employee.Result > maxResult)
-    {
-        maxResult = employee.Result;
-        employerWithMaxResult = employee; 
-    }
-}
-Console.WriteLine("Employee max result is " + maxResult);
-Console.WriteLine("Employee with max result is " + employerWithMaxResult.Name+ " " + employerWithMaxResult.Surname+" "+ employerWithMaxResult.Age);
+
 
 
 
