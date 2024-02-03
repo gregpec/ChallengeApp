@@ -1,29 +1,25 @@
 ﻿using ChallengeApp;
 
 Employee Employee1 = new Employee("Jacek","Kalinowski");
-Employee Employee2 = new Employee("Renata","Walecko");
-Employee Employee3 = new Employee("Karol","Patryczewski");
 
-Employee1.AddGrade(5);
-Employee1.AddGrade(-3);
-Employee1.AddGrade(1);
+Employee1.AddGrade('c'); //char
+Employee1.AddGrade("Karolposzedlnaobiad"); //string as text
+Employee1.AddGrade("79.34"); //string to number
+Employee1.AddGrade(65.56); //double 
+Employee1.AddGrade(59.83); //double
+Employee1.AddGrade(54); //int
+Employee1.AddGrade(20930296876); //long 
+Employee1.AddGrade(113); //int
+Employee1.AddGrade(-117613); //int
+Employee1.AddGrade(1113); //int
+Employee1.AddGrade(1113.15); //double
 
-Employee2.AddGrade(1);
-Employee2.AddGrade(6);
-Employee2.AddGrade(10);
-
-Employee3.AddGrade(1);
-Employee3.AddGrade(30);
-Employee3.AddGrade(1);
-
-List<Employee> employeers = new List<Employee>()
-{ 
-    Employee1, Employee2, Employee3
-};
-    var statistics = Employee1.GetStatistics(); 
+var statistics = Employee1.GetStatistics();
+    Console.Write("\n");
     Console.WriteLine("Employee named " + Employee1.Name + " has " +$"Average: {statistics.Average:N2}");
     Console.WriteLine($" Min: {statistics.Min}");
     Console.WriteLine($" Max: {statistics.Max}");
+
 
 
 
