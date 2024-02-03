@@ -25,10 +25,10 @@
         }
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float result))
+            if (float.TryParse(grade, out float StringToFloat))
             {
                 Console.Write("the value is string of number and ");
-                this.AddGrade(result);
+                this.AddGrade(StringToFloat);
             }
             else
                 Console.WriteLine("the value is as string of text and is incorrect");
@@ -40,20 +40,20 @@
         public void AddGrade(double grade)
         {
             Console.Write("the value of number is double and ");
-            float result = (float)grade;
-            this.AddGrade(result); 
+            float DoubleToFloat = (float)grade;
+            this.AddGrade(DoubleToFloat); 
         }
         public void AddGrade(long grade)
         {
             Console.Write("the value of number is long and ");
-            float result = (float)grade;
-            this.AddGrade(result);
+            float LongToFloat = (float)grade;
+            this.AddGrade(LongToFloat);
         }
         public void AddGrade(int grade)
         {
             Console.Write("the value of number is int and ");
-            float result = (float)grade;
-            this.AddGrade(result);
+            float IntToFloat = (float)grade;
+            this.AddGrade(IntToFloat);
         }
         public Statistics GetStatistics()
         {
