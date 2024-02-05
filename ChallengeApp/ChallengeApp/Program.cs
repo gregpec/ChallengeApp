@@ -3,7 +3,7 @@
 Employee employee = new Employee("Jacek","Kalinowski");
 
 employee.AddGrade('d'); //char
-employee.AddGrade("Karol poszedł na ryby"); //string as text
+employee.AddGrade("Karolposzedłnaryby"); //string as text
 employee.AddGrade("79.34"); //string to number
 employee.AddGrade(65.56); //double 
 employee.AddGrade(59.83); //double
