@@ -3,16 +3,9 @@
     public class Employee
     {
         private List<float> grades = new List<float>();
-
         public Employee()
         {
-
         }
-
-        public string Name { get; private set; }
-        public string SurName { get; private set; }
-        public int Age { get; private set; }
-
         public void AddGrade(float grade)
         {
             if (grade >= 0 && grade <= 100)
