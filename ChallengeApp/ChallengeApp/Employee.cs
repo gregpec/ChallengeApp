@@ -1,21 +1,28 @@
-﻿namespace ChallengeApp
+﻿using System.Linq.Expressions;
+
+namespace ChallengeApp
 {
     public class Employee
     {
         private List<float> grades = new List<float>();
-        public Employee()
+        public Employee(string name, string surName)
         {
+            this.Name = name;
+            this.Surname = surName;
         }
+        public string Name { get; private set; }
+        public string Surname { get; private set; }
+
         public void AddGrade(float grade)
         {
-            if (grade >= 0 && grade <= 100)
-            {
-                Console.Write("the value of grade is correct and is converted to float\n");
-                this.grades.Add(grade);
-            }
+                if (grade >= 0 && grade <= 100)
+                {
+                    Console.Write("the value of grade is correct and is converted to float\n");
+                    this.grades.Add(grade);
+                }
             else
             {
-                Console.Write("the value is out of range\n");
+                throw new Exception("the value is out of range\n");
             }
         }
         public void AddGrade(string grade)
@@ -57,8 +64,7 @@
                         this.AddGrade(20);
                         break;
                     default:
-                        Console.WriteLine("wrong letter");
-                        break;
+                        throw new Exception("wrong letter");
                 }
         }
         public void AddGrade(double grade)

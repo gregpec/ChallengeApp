@@ -1,9 +1,12 @@
 ﻿using ChallengeApp;
+using System;
 using System.ComponentModel.Design;
 using System.Diagnostics;
+using System.Linq.Expressions;
 
-Employee employee = new Employee();
+Employee employee = new Employee("Mariusz","Borecki");
 Console.WriteLine("Employee evaluation program");
+Console.WriteLine($"Employee named:  {employee.Name} {employee.Surname} ");
 Console.WriteLine("======================================");
 
 while (true)
@@ -16,11 +19,26 @@ while (true)
     }
     if (char.TryParse((input), out char result))
     {
-        employee.AddGrade(result);
+        try
+        {
+            employee.AddGrade(result);
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"Exception Catched:{exception.Message}");
+        }
+
     }
     else
-    employee.AddGrade(input);
-
+        try
+        {
+            employee.AddGrade(input);
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"Exception Catched:{exception.Message}");
+        }
+        
 }
 var statistics = employee.GetStatistics();
 Console.WriteLine("======================================");
