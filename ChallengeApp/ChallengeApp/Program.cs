@@ -1,8 +1,4 @@
 ﻿using ChallengeApp;
-using System;
-using System.ComponentModel.Design;
-using System.Diagnostics;
-using System.Linq.Expressions;
 
 Employee employee = new Employee("Mariusz","Borecki");
 Console.WriteLine("Employee evaluation program");
@@ -27,7 +23,6 @@ while (true)
         {
             Console.WriteLine($"Exception Catched:{exception.Message}");
         }
-
     }
     else
         try
@@ -37,8 +32,7 @@ while (true)
         catch (Exception exception)
         {
             Console.WriteLine($"Exception Catched:{exception.Message}");
-        }
-        
+        }      
 }
 var statistics = employee.GetStatistics();
 Console.WriteLine("======================================");
