@@ -1,8 +1,8 @@
 ﻿using ChallengeApp;
 
-Employee employee = new Employee("Mariusz","Borecki");
+Employee employee = new Employee("Mariusz");
 Console.WriteLine("Employee evaluation program");
-Console.WriteLine($"Employee named:  {employee.Name} {employee.Surname} ");
+Console.WriteLine($"Employee named:  {employee.Name} {employee.Surname} {employee.Sex}");
 Console.WriteLine("======================================");
 
 while (true)
@@ -32,7 +32,7 @@ while (true)
         catch (Exception exception)
         {
             Console.WriteLine($"Exception Catched:{exception.Message}");
-        }      
+        }
 }
 var statistics = employee.GetStatistics();
 Console.WriteLine("======================================");

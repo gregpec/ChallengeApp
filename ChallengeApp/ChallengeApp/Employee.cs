@@ -1,25 +1,40 @@
-﻿using System.Linq.Expressions;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
-    public class Employee
+    public class Employee : Person
     {
         private List<float> grades = new List<float>();
-        public Employee(string name, string surName)
+
+        public Employee(string name, string surname, char sex)
+            : base(name, surname, sex)
         {
-            this.Name = name;
-            this.Surname = surName;
+        }
+        public Employee(string name, string surname)
+           : this(name, surname, 'K')
+        {
+        }
+        public Employee(string name)
+           : this(name, "no surname", 'M')
+        {
+        }
+        public Employee(char sex)
+            : this("no name", "no surname")
+        {
+        }
+        public Employee()
+            : this("no name", "no surname", 'M')
+        {
         }
         public string Name { get; private set; }
         public string Surname { get; private set; }
+        public char Sex { get; private set; }
 
         public void AddGrade(float grade)
         {
-                if (grade >= 0 && grade <= 100)
-                {
-                    Console.Write("the value of grade is correct and is converted to float\n");
-                    this.grades.Add(grade);
-                }
+            if (grade >= 0 && grade <= 100)
+            {
+                Console.Write("the value of grade is correct and is converted to float\n");
+                this.grades.Add(grade);
+            }
             else
             {
                 throw new Exception("the value is out of range\n");
@@ -37,35 +52,35 @@ namespace ChallengeApp
         }
         public void AddGrade(char grade)
         {
-                switch (grade)
-                {
-                    case 'A':
-                    case 'a':
-                        this.AddGrade(100);
+            switch (grade)
+            {
+                case 'A':
+                case 'a':
+                    this.AddGrade(100);
 
-                        break;
-                    case 'B':
-                    case 'b':
-                        this.AddGrade(80);
+                    break;
+                case 'B':
+                case 'b':
+                    this.AddGrade(80);
 
-                        break;
-                    case 'C':
-                    case 'c':
-                        this.AddGrade(60);
+                    break;
+                case 'C':
+                case 'c':
+                    this.AddGrade(60);
 
-                        break;
-                    case 'D':
-                    case 'd':
-                        this.AddGrade(40);
+                    break;
+                case 'D':
+                case 'd':
+                    this.AddGrade(40);
 
-                        break;
-                    case 'E':
-                    case 'e':
-                        this.AddGrade(20);
-                        break;
-                    default:
-                        throw new Exception("wrong letter");
-                }
+                    break;
+                case 'E':
+                case 'e':
+                    this.AddGrade(20);
+                    break;
+                default:
+                    throw new Exception("wrong letter");
+            }
         }
         public void AddGrade(double grade)
         {
@@ -122,7 +137,7 @@ namespace ChallengeApp
         }
     }
 }
-   
+
 
 
 
