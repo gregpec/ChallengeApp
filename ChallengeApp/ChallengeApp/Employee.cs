@@ -9,15 +9,11 @@
         {
         }
         public Employee(string name, string surname)
-           : this(name, surname, 'K')
+           : this(name, surname, 'M')
         {
         }
         public Employee(string name)
            : this(name, "no surname", 'M')
-        {
-        }
-        public Employee(char sex)
-            : this("no name", "no surname")
         {
         }
         public Employee()
