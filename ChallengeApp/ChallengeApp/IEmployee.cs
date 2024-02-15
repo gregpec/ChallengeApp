@@ -1,6 +1,6 @@
 ﻿namespace ChallengeApp
 {
-    internal interface IEmployee
+    public interface IEmployee
     {
         string Name { get; }
         string Surname { get; }
