@@ -1,9 +1,15 @@
 ﻿using ChallengeApp;
 
-var employee = new EmployeeInFile("Grzegorz","Pećko",'M');
+var employee = new EmployeeInMemory("Grzegorz", "Pećko", 'M');
 Console.WriteLine("Employee evaluation program");
 Console.WriteLine($"Employee named:  {employee.Name} {employee.Surname} {employee.Sex}");
 Console.WriteLine("======================================");
+
+employee.GradeAdded += EmployeeGradeAdded;
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("New rating added!");
+}
 
 while (true)
 {
@@ -21,7 +27,7 @@ while (true)
         }
         catch (Exception exception)
         {
-            Console.WriteLine($"Exception Catched:{exception.Message}");
+            Console.WriteLine($"Exception catched: {exception.Message}");
         }
     }
     else
@@ -31,7 +37,7 @@ while (true)
         }
         catch (Exception exception)
         {
-            Console.WriteLine($"Exception Catched:{exception.Message}");
+            Console.WriteLine($"Exception catched: {exception.Message}");
         }
 }
 
