@@ -1,6 +1,6 @@
 ﻿using ChallengeApp;
 
-var employee = new EmployeeInMemory("Grzegorz", "Pećko", 'M');
+var employee = new EmployeeInFile("Grzegorz", "Pećko", 'M');
 Console.WriteLine("Employee evaluation program");
 Console.WriteLine($"Employee named:  {employee.Name} {employee.Surname} {employee.Sex}");
 Console.WriteLine("======================================");
@@ -32,13 +32,13 @@ while (true)
     }
     else
         try
-        {
-            employee.AddGrade(input);
-        }
-        catch (Exception exception)
-        {
-            Console.WriteLine($"Exception catched: {exception.Message}");
-        }
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception exception)
+    {
+        Console.WriteLine($"Exception catched: {exception.Message}");
+    }
 }
 
 var statisticsForEmployee = employee.GetStatistics();
@@ -47,6 +47,7 @@ Console.WriteLine($"AVG: {statisticsForEmployee.AverageLetter:N2}");
 Console.WriteLine($"Average: {statisticsForEmployee.Average:N2}");
 Console.WriteLine($"Min: {statisticsForEmployee.Min}");
 Console.WriteLine($"Max: {statisticsForEmployee.Max}");
+
 
 
 
