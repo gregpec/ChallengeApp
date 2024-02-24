@@ -348,3 +348,9 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/ChallengeApp/ChallengeApp/EmployeeBase.cs
+/ChallengeApp/ChallengeApp/EmployeeInFile.cs
+/ChallengeApp/ChallengeApp/EmployeeInMemory.cs
+/ChallengeApp/ChallengeApp/IEmployee.cs
+/ChallengeApp/ChallengeApp/Program.cs
+/ChallengeApp/ChallengeApp/Statistics.cs
